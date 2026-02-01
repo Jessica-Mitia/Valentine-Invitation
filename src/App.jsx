@@ -8,7 +8,22 @@ function App() {
   const btnRef = useRef(null);
   const btnRef2 = useRef(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+
+    checkScreen(); 
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     const btn = btnRef.current;
     if (!btn) return;
 
@@ -49,9 +64,11 @@ function App() {
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isMobile]);
 
   const [showResponse, setShowResponse] = useState(false);
+
+  const [tryAgain, setTryAgain] = useState(false);
 
   return (
     <div className="App">
@@ -67,11 +84,22 @@ function App() {
               </button>
 
               <div className="no-wrapper">
-                <button ref={btnRef} id="fleeBtn" className="button-no">
+                <button
+                  ref={btnRef}
+                  id="fleeBtn"
+                  className="button-no"
+                  onClick={() => setTryAgain(true)}
+                >
                   No
                 </button>
               </div>
             </div>
+          </div>
+        )}
+
+        {tryAgain && (
+          <div className="response-block">
+            <p className="response-text">Try again!!!!</p>
           </div>
         )}
 
