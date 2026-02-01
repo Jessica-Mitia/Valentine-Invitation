@@ -97,7 +97,7 @@ function App() {
           </div>
         )}
 
-        {tryAgain && (
+        {tryAgain && !showResponse && (
           <div className="response-block">
             <p className="response-text">Try again!!!!</p>
           </div>
