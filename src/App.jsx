@@ -77,7 +77,7 @@ function App() {
 
         {!showResponse && (
           <div>
-            <p className="text-invit">Princia, will you be my valentine?</p>
+            <p className="text-invit">Will you be my valentine?</p>
             <div className="button-block">
               <button id="button-yes" onClick={() => setShowResponse(true)}>
                 Yes
