@@ -3,9 +3,6 @@
 A playful and romantic Valentine’s Day web app built with React.
 The user is asked a simple question… but saying “No” is not that easy XD 
 
-## Preview
-
-
 ## Features
 - Interactive “No” button that smoothly escapes the mouse (desktop only)
 - Mobile-friendly responsive design
@@ -16,3 +13,6 @@ The user is asked a simple question… but saying “No” is not that easy XD
 ## Purpose
 This project was created as a fun and creative way to practice React fundamentals
 (state, refs, effects, conditional rendering) while delivering a playful user experience.
+
+## Preview
+<img src="assets/preview.png" width="500" />
